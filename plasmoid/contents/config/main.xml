@@ -17,6 +17,9 @@
         <entry name="numberRows" type="Int">
             <default>5</default>
         </entry>
+        <entry name="icon" type="String">
+            <default>distributor-logo-tridentu</default>
+        </entry>
         <entry name="iconSize" type="Int">
             <default>64</default>
         </entry>

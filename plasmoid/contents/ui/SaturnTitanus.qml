@@ -124,95 +124,16 @@ Item {
         appletInterface: plasmoid
         deleteWhenEmpty: false
     }
-
-    Plasmoid.compactRepresentation: MouseArea {
-        id: compactRoot
-
-        implicitWidth: PlasmaCore.Units.iconSizeHints.panel
-        implicitHeight: PlasmaCore.Units.iconSizeHints.panel
-
-        Layout.minimumWidth: {
-            if (!titanusRoot.inPanel) {
-                return PlasmaCore.Units.iconSizes.small
-            }
-
-            if (titanusRoot.vertical) {
-                return -1;
-            } else {
-                return Math.min(PlasmaCore.Units.iconSizeHints.panel, parent.height) * buttonIcon.aspectRatio;
-            }
-        }
-
-        Layout.minimumHeight: {
-            if (!titanusRoot.inPanel) {
-                return PlasmaCore.Units.iconSizes.small
-            }
-
-            if (titanusRoot.vertical) {
-                return Math.min(PlasmaCore.Units.iconSizeHints.panel, parent.width) * buttonIcon.aspectRatio;
-            } else {
-                return -1;
-            }
-        }
-
-        Layout.maximumWidth: {
-            if (!titanusRoot.inPanel) {
-                return -1;
-            }
-
-            if (titanusRoot.vertical) {
-                return PlasmaCore.Units.iconSizeHints.panel;
-            } else {
-                return Math.min(PlasmaCore.Units.iconSizeHints.panel, parent.height) * buttonIcon.aspectRatio;
-            }
-        }
-
-        Layout.maximumHeight: {
-            if (!titanusRoot.inPanel) {
-                return -1;
-            }
-            if (titanusRoot.vertical) {
-                return Math.min(PlasmaCore.Units.iconSizeHints.panel, parent.width) * buttonIcon.aspectRatio;
-            } else {
-                return PlasmaCore.Units.iconSizeHints.panel;
-            }
-        }
-
-        hoverEnabled: true
-        // For some reason, onClicked can cause the plasmoid to expand after
-        // releasing sometimes in plasmoidviewer.
-        // plasmashell doesn't seem to have this issue.
-        onClicked: {
-            titanusDash.toggle()
-
-        }
-        DropArea {
-            id: compactDragArea
-            anchors.fill: parent
-        }
-
-        Timer {
-            id: expandOnDragTimer
-            // this is an interaction and not an animation, so we want it as a constant
-            interval: 250
-            running: compactDragArea.containsDrag
-            onTriggered: plasmoid.expanded = true
-        }
-
-        PlasmaCore.IconItem {
-            id: buttonIcon
-
-            readonly property double aspectRatio: (titanusRoot.vertical ? implicitHeight / implicitWidth
-                : implicitWidth / implicitHeight)
-
-            anchors.fill: parent
-            source: plasmoid.icon
-            active: parent.containsMouse || compactDragArea.containsDrag
-            smooth: true
-            roundToIconSize: aspectRatio === 1
+    
+    Component {
+        id: compactRepresentation
+        CompactRepresentation {
+        
         }
     }
 
+
+    Plasmoid.compactRepresentation: compactRepresentation
     Kicker.DashboardWindow {
             id: titanusDash
             backgroundColor: "transparent"
