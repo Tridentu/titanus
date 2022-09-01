@@ -134,6 +134,7 @@ Item {
 
 
     Plasmoid.compactRepresentation: compactRepresentation
+    
     Kicker.DashboardWindow {
             id: titanusDash
             backgroundColor: "transparent"
