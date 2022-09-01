@@ -1,0 +1,32 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "tridentuorg@protnmail.com",
+                "Name": "Tridentu Group",
+                "Name[x-test]": "xxTridentu Groupxx"
+            }
+        ],
+        "Category": "Application Launchers",
+        "Description": "An application dashboard that encompasses the whole screen.",
+        "EnabledByDefault": true,
+        "Icon": "/usr/share/distro-data/tridentur.png",
+        "Id": "io.github.tridentu.saturn-titanus",
+        "License": "GPL-2.0+",
+        "Name": "Saturn Titanus",
+        "Name[x-test]": "xxSaturn Titanusxx",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "0.1",
+        "Website": "https://tridentu.github.io/saturn-titanus"
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/SaturnTitanus.qml",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.launchermenu"
+    ],
+    "X-Plasma-RequiredExtensions": [
+        "LaunchApp"
+    ]
+}

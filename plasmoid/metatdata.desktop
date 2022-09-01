@@ -1,0 +1,19 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Saturn Launcher
+Comment=An application dashboard that encompasses the whole screen.
+Type=Service
+Icon=xfdashboard
+
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-Name=io.github.tridentu.saturn-titanus
+X-KDE-PluginInfo-Version=0.6
+X-KDE-PluginInfo-Website=tridentu.github.io/saturn-titanus
+X-KDE-ServiceTypes=Plasma/Applet;Plasma/Containment;
+X-KDE-PluginInfo-Category=Application Launchers
+X-KDE-PluginInfo-Email=tridentuorg@protnmail.com
+X-KDE-PluginInfo-Author=Tridentu Group
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/SaturnTitanus.qml
+X-Plasma-RequiredExtensions=LaunchApp
+X-Plasma-Provides=org.kde.plasma.launchermenu
